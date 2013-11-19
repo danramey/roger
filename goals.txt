@@ -1,0 +1,59 @@
+basic goals
+
+- take text input
+
+- build a map of the text
+
+- answer queries about the text
+
+A simple example
+
+input: 
+"Mary had a little lamb,
+whose fleece was white as snow."
+
+map:
+
+{
+	"name":"Mary",
+	"type":"person"
+	"has":[
+		{
+			"type":lamb",
+			"size":"little",
+			"has":[
+				{
+					"type":"fleece",
+					"color":"white"//(white as snow?)
+				}
+		}
+	]
+	
+}
+
+query:
+	"what color is Mary's Lamb?"
+answer:
+	"white"
+
+
+
+future goals / issues / notes
+
+- verifying information
+- resolving discrepencies between maps
+- create a permanent knowledge base/experiences help to parse new info
+- accept image and audio inputs, connect images to text
+- ask moderators questions about the text to clarify
+- make assumptions, for example assume that the lamb is white, since the fleece is white
+- multiple states/ tentative information for ambiguous statements, for example, does Mary or the lamb have a white fleece
+- create instruction sets, for example read a technical article, and return a list of instructions
+- parse twitter feeds/facebook posts/political articles
+
+- create different documents for different sources, and commit verified data to main knowledge base
+
+=== initial steps ===
+	- plan major components
+	- write tests
+	- 
+
