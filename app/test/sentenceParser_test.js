@@ -2,6 +2,7 @@
 
 var SentenceParser = require('../lib/processing/sentenceParser.js');
 var sentenceParser = new SentenceParser();
+var pos;
 /*
   ======== A Handy Little Nodeunit Reference ========
   https://github.com/caolan/nodeunit
@@ -25,13 +26,27 @@ var sentenceParser = new SentenceParser();
 exports['roger'] = {
   setUp: function(done) {
     // setup here
+    pos = {
+      'Mary':'N',
+      'had':'V',
+      'a':'A',
+      'little':'DAv',
+      'lamb':'N',
+      'whose':'D',
+      'fleece':'N',
+      'was':'V',
+      'white':'ANV',
+      'as':'CPN',
+      'snow':'N'
+
+    };
     
     done();
   },
   'no args': function(test) {
     test.expect(1);
     var text = "Mary had a little lamb, whose fleece was white as snow";
-    var structure = sentenceParser.findSentenceStructure(text);
+    var structure = sentenceParser.findSentenceStructure(pos, text);
     test.equal(structure, 'foo', 'found the sentance structure');
     
     test.done();
