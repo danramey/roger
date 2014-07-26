@@ -20,6 +20,10 @@ execute "stopiptables" do
 	command "service iptables stop"
 end
 
+execute "scipy" do
+	command "yum -y install numpy scipy python-matplotlib ipython python-pandas sympy python-nose"
+end
+
 template "/etc/init.d/roger" do
     source "roger.sh"
     owner "root"
@@ -34,4 +38,16 @@ execute "startup" do
 	# command "touch /var/run/roger.pid"
 	command "chkconfig --level 345 roger on"
 	command "service roger start"
+end
+
+execute "NLTK" do
+	command "pip install -U nltk"
+end
+
+execute "pybrain" do
+	command "pip install pybrain"
+end
+
+execute "SQLAlchemy" do
+	command "pip install Flask-SQLAlchemy"
 end
