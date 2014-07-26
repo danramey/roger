@@ -2,3 +2,4 @@
 npm-debug.log
 app/nltk_data/
 *.pyc
+app/.DS_Store
