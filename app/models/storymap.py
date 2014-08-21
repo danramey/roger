@@ -1,5 +1,7 @@
 #!/usr/bin/python
 
+# planned classes to contain word relationships
+
 class Word:
 
 	def __init__(self, term):

@@ -1,4 +1,6 @@
 #!/usr/bin/python
+# example pybrain ann usage
+
 from pybrain.tools.shortcuts import buildNetwork
 from pybrain.supervised.trainers import BackpropTrainer
 from pybrain.datasets import SupervisedDataSet
