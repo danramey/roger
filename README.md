@@ -3,6 +3,12 @@ roger
 
 A Natural Language Mapper
 
+
+start the VM
+==================
+- browse to ./box
+vagrant up
+
 to run the app
 ==================
 ./app/app.py
@@ -13,7 +19,6 @@ sample requests
 
 # create a new story
 curl --data "content=list flights from cleveland ." http://localhost:5000/story/
-/story/1
 
 # read a story
 curl http://localhost:5000/story/1
