@@ -22,10 +22,10 @@ def get_story(story_id):
 def handle_story():
 	if request.method == 'POST':
 		mapper = Mapper()
-		mapper.map(request.form['content'])
-		result = mapper.get_result()
+		result = mapper.map(request.form['content'])
 		sys.stdout.flush()
-		return result
-		# return "create story: %s \n" % content
+		# return the new story URI
+		# this is a stub for now
+		return "/story/1\n"
 	else:
 		return "list stories\n"
