@@ -1,0 +1,2 @@
+Network.o: src/brain/Network.cpp src/brain/Network.h
+roger.o: src/roger.cpp src/brain/Network.h

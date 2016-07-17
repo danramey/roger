@@ -1,0 +1,23 @@
+{
+  "name": "pattern_matcher",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Dan Ramey",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "gulp": "^3.9.1",
+    "gulp-mocha": "^2.2.0",
+    "mocha": "^2.5.3"
+  },
+  "dependencies": {
+    "debug": "^2.2.0"
+  }
+}
