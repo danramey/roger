@@ -22,12 +22,25 @@ module.exports = (function(api) {
 		};
 		var playSpotifyRandom = matchstick('play spotify', 'template');
 		var playSpotifySearch = matchstick('play spotify {term}', 'template');
-		var playSpotifySpecific = matchstick('play spotify {type} {term}', 'template');
+		var playSpotifySong = matchstick('play spotify song {term}', 'template');
+		var playSpotifyArtist = matchstick('play spotify artist {term}', 'template');
+		var playSpotifyAlbum = matchstick('play spotify album {term}', 'template');
 
-		if(playSpotifySpecific.match(command)) {	
+		if(playSpotifySong.match(command)) {	
 			apiCall.success = true;
 			apiCall.method = 'spotify';
-			apiCall.args = playSpotifySpecific.matches;
+			apiCall.args = playSpotifySong.matches;
+			apiCall.args.type = 'song';
+		} else if(playSpotifyArtist.match(command)) {	
+			apiCall.success = true;
+			apiCall.method = 'spotify';
+			apiCall.args = playSpotifyArtist.matches;
+			apiCall.args.type = 'artist';
+		} else if(playSpotifyAlbum.match(command)) {	
+			apiCall.success = true;
+			apiCall.method = 'spotify';
+			apiCall.args = playSpotifyAlbum.matches;
+			apiCall.args.type = 'album';
 		} else if(playSpotifySearch.match(command)) {
 			apiCall.success = true;
 			apiCall.method = 'spotify';
@@ -58,6 +71,7 @@ module.exports = (function(api) {
 			if(!api[apiCall.method]) {
 				reject("invalid command");
 			}
+			console.log(api[apiCall.method]);
 			api[apiCall.method](apiCall.args).then(function(result) {
 				console.log('executeCommand:' + result);
 				resolve(result);

@@ -1,0 +1,13 @@
+- command module
+	- natural language
+	- voice control commands
+
+- media
+
+	- choose destination
+	- choose media/source
+		- airplay relay
+		- spotify connect
+
+- control smartthings
+- home server hooks

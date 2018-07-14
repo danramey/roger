@@ -2,13 +2,18 @@
 
 var Promise = require('promise');
 
+var spotifyController = require('./media/spotify_controller');
+
 module.exports = (function() {
 
 	var spotify = function spotify(args) {
 		console.log(args);
 		return new Promise(function(resolve, reject) {
-			console.log('api:' + result);
-			resolve(args);
+
+			if('song' == args.type) {
+				spotifyController.playSong(args.term).then(resolve,reject);
+			}
+			
 		});
 	};
 	return {
